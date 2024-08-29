@@ -14,7 +14,7 @@ app.use("*", (req, res) => {
 
 app.use((err, req, res, next) => {
     console.log(err);
-    res.status(500).json({ message: "SERVER ERROR", error: RegExp.message })
+    res.status(500).json({ message: "SERVER ERROR", error: err.message })
 })
 mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.once("open", () => {
