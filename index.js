@@ -12,7 +12,6 @@ app.use(cors({ origin: true, credentials: true }))
 app.use("/api/info", require("./routes/blog.routes"))
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dist", "index.html"))
-    // res.status(404).json({ message: "Resource Not Found 404" })
 })
 
 app.use((err, req, res, next) => {
