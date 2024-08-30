@@ -9,6 +9,7 @@ require("dotenv").config()
 app.use(express.json())
 app.use(cors({ origin: true, credentials: true }))
 
+
 app.use("/api/info", require("./routes/blog.routes"))
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dist", "index.html"))
