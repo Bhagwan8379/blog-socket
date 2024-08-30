@@ -12,7 +12,7 @@ exports.readBlog = asynchandler(async (req, res) => {
 })
 exports.updateBlog = asynchandler(async (req, res) => {
     await Blog.findByIdAndUpdate(req.params.id, req.body)
-    res.json({ message: "blog update Success" })
+    res.json({ message: "Blog Updated Success" })
 })
 exports.deleteBlog = asynchandler(async (req, res) => {
     await Blog.findByIdAndDelete(req.params.id, req.body)
